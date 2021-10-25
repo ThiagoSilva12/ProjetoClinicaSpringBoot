@@ -28,6 +28,18 @@ public class PacienteController {
 		public List<Paciente> listar(){
 			return pr.findAll();
 		}
+	
+	@GetMapping("/pesquisar/{id}")
+	public Optional<Paciente> pesquisarId(@PathVariable Long id) {
+		return pr.findById(id);
+	}
+	
+	
+	
+	
+	
+	
+	
 		@PostMapping("/cadastro")
 		public String cadastro(@RequestBody Paciente paciente) {
 			pr.save(paciente);
